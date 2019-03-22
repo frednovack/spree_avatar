@@ -1,0 +1,33 @@
+<% content_for :account_sidebar do %>
+  <%= render partial: 'spree/account/shared/sidebar', locals: {current: :account} %>
+<% end %>
+
+<% content_for :account_title do %>
+  <%= Spree.t(:account) %>
+<% end %>
+
+<div data-hook="account_summary" class="account-summary well">
+  <dl id="user-info">
+    <dt><%= Spree.t(:email) %></dt>
+    <dd><%= @user.email %> (<%= link_to Spree.t(:edit), spree.edit_account_user_path %>)</dd>
+    <br />
+    <dt><%= Spree.t(:credit_balance, scope: [:store_credits])%></dt>
+    <dd>
+      <%= Spree::Money.new(spree_current_user.total_available_store_credit, currency: Spree::Config[:currency]) %>
+    </dd>
+  </dl>
+</div>
+
+<div data-hook="account_avatar" class="account-summary well">
+  <dl>
+    <dt><%= Spree.t(:avatar) %></dt>
+    <dd><%#= image_tag "sss_gravatar/cruz.png", size: 128 %>
+        <%= image_tag avatar_url(@user, 64), size: 128 %>
+        (<%= link_to Spree.t(:edit), spree.edit_account_user_path %>)
+      <%= link_to spree.edit_account_avatar_url(@user, avatar), class: "btn btn-primary btn-sm" do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+      <% end if can? :edit, @product => Spree::Image %>
+
+    </dd>
+  </dl>
+</div>

@@ -1,0 +1,41 @@
+<%= render partial: 'spree/shared/error_messages', locals: { target: @avatar } %>
+
+<% content_for :sidebar do %>
+  <%= render partial: 'spree/account/products/product_tabs', locals: { current: :images } %>
+<% end %>
+
+<div data-hook="product_title">
+  <h1 class="product-title" style="display:inline-block"><%= @product.name %></h1>
+</div>
+
+<%= form_for [:account, @product, @image], html: { multipart: true } do |f| %>
+  <div data-hook="edit_image" class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">
+        <%= @image.attachment_file_name%>
+      </h1>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <div data-hook="thumbnail" class="col-xs-12 col-md-3 text-center">
+          <%= f.label Spree.t(:thumbnail) %>
+          <%= link_to image_tag(main_app.url_for(@image.url(:small))), main_app.url_for(@image.url(:product)) %>
+        </div>
+        <div class="col-xs-12 col-md-9">
+          <%= render partial: 'form', locals: { f: f } %>
+        </div>
+
+        <div class="form-actions pull-right" data-hook="buttons">
+          <%= link_to spree.account_product_images_url(@product), class: "btn btn-default" do %>
+            <span class="glyphicon glyphicon-remove"></span> <%= Spree.t('actions.cancel') %>
+          <% end %>
+          <span class="or"><%= Spree.t(:or) %></span>
+          <%= button_to '', class: 'btn btn-primary', data: {disable_with: "#{ Spree.t(:saving) }..."} do %>
+            <span class="glyphicon glyphicon-ok"></span> <%= Spree.t('actions.update') %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>
