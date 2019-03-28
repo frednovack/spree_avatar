@@ -1,0 +1,19 @@
+module SssAvatar
+  module AvatarHelper
+
+    def avatar_url(user)
+      if user.avatar.attached? 
+        user.avatar
+  #   elsif user.avatar_url.present?
+  #     user.avatar_url
+      else
+  #      "sss_avatar/cancan.png"
+        Dir["images/sss_avatar/*"].sample
+  #     default_url = "http://yovendo.herokuapp.com/cruz.png"     
+  #     gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+  #     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{CGI::escape(default_url)}"
+      end
+    end
+
+  end
+end

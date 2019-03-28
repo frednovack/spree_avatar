@@ -9,7 +9,11 @@
 <div data-hook="account_summary" class="account-summary well">
   <dl id="user-info">
     <dt><%= Spree.t(:email) %></dt>
-    <dd><%= @user.email %> (<%= link_to Spree.t(:edit), spree.edit_account_user_path %>)</dd>
+    <dd><%= @user.email %>
+        <%= link_to spree.edit_account_user_path, class: "btn btn-primary btn-sm", :style => 'margin-left:20px;' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+        <% end if can? :edit, @user %>
+    </dd>
     <br />
     <dt><%= Spree.t(:credit_balance, scope: [:store_credits])%></dt>
     <dd>
@@ -21,13 +25,11 @@
 <div data-hook="account_avatar" class="account-summary well">
   <dl>
     <dt><%= Spree.t(:avatar) %></dt>
-    <dd><%#= image_tag "sss_gravatar/cruz.png", size: 128 %>
-        <%= image_tag avatar_url(@user, 64), size: 128 %>
-        (<%= link_to Spree.t(:edit), spree.edit_account_user_path %>)
-      <%= link_to spree.edit_account_avatar_url(@user, avatar), class: "btn btn-primary btn-sm" do %>
+    <dd><%#= avatar_url(@user).inspect %>
+      <%= image_tag avatar_url(@user), size: 128, :style => 'margin-right:20px;' %>
+      <%= link_to spree.avatar_account_user_path, class: "btn btn-primary btn-sm" do %>
         <span class="glyphicon glyphicon-pencil"></span>
-      <% end if can? :edit, @product => Spree::Image %>
-
+      <% end if can? :avatar, @user %>
     </dd>
   </dl>
 </div>

@@ -1,0 +1,49 @@
+<%= render partial: 'spree/shared/error_messages', locals: { target: @user} %>
+
+<% content_for :account_sidebar do %>
+  <%= render partial: 'spree/account/shared/sidebar', locals: { current: :account } %>
+<% end %>
+
+<div data-hook="avatar_title">
+  <h1 class="product-title" style="display:inline-block"><%= Spree.t('avatar') %></h1>
+</div>
+
+<%= form_for @user, url: avatar_account_user_url, method: :put do |f| %>
+  <div data-hook="edit_image" class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">
+        <%= Spree.t('avatar') %>
+      </h1>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <div data-hook="thumbnail" class="col-xs-12 col-md-3 text-center">
+          <%= f.label Spree.t(:thumbnail) %>
+          <%= link_to image_tag(avatar_url(@user), size: 128) %>
+        </div>
+        <div class="col-xs-12 col-md-9">
+
+          <div data-hook="image_form_fields" class="row">
+            <div class="col-xs-12 col-md-6">
+              <div data-hook="file" class="form-group">
+                <%= f.label :avatar, Spree.t(:filename) %>
+                <%= f.file_field :avatar %>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-actions pull-right" data-hook="buttons">
+          <%= link_to spree.account_user_url(@user), class: "btn btn-default" do %>
+            <span class="glyphicon glyphicon-remove"></span> <%= Spree.t('actions.cancel') %>
+          <% end %>
+          <span class="or"><%= Spree.t(:or) %></span>         
+          <%= button_to '', class: 'btn btn-primary', data: {disable_with: "#{ Spree.t(:saving) }..."} do %>
+            <span class="glyphicon glyphicon-ok"></span> <%= Spree.t('actions.update') %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>
+

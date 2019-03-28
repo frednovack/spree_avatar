@@ -29,5 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", "~> 5.2.2"
 
   spec.add_dependency "spree_social_sales"
-#  spec.add_development_dependency "sqlite3"
+  spec.add_dependency "cancancan"  
+
 end
