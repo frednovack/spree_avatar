@@ -1,13 +1,10 @@
 Spree::Account::UsersController.class_eval do
 
-  before_action :load_and_authorize_user, except: [:new, :create]
-
   respond_to :html
 
   def avatar
     if request.put?
-#      @user.avatar.purge 	
-      if @user.avatar.attach(params[:avatar])
+      if @user.update_attributes(user_params)
         flash.now[:success] = Spree.t(:account_updated)
       end
       render :show
@@ -16,9 +13,8 @@ Spree::Account::UsersController.class_eval do
 
   private
 
-  def load_and_authorize_user
-    @user ||= spree_current_user
-    authorize! params[:action].to_sym, @user
+  def user_params
+    params.require(:user).permit(permitted_user_attributes | [:avatar])
   end
 
 end

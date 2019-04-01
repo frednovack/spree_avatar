@@ -1,8 +1,8 @@
 Spree::FrontendHelper.class_eval do
 
-  def avatar_url(user)
-    if user.avatar.attached? 
-      user.avatar
+  def avatares(user)
+    if user.avatar.attached?
+      main_app.url_for(user.avatar)
 #   elsif user.avatar_url.present?
 #     user.avatar_url
     else
