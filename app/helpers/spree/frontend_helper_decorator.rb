@@ -1,6 +1,6 @@
 Spree::FrontendHelper.class_eval do
 
-  def gavatar_url(user)
+  def avatar_url(user)
     if user.avatar.attached?
       main_app.url_for(user.avatar)
     elsif ENV['RAILS_ENV'] == "development"

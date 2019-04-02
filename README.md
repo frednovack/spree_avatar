@@ -1,4 +1,4 @@
-# SSS Avatar
+# Sss Avatar
 This is a ROR plugin to use with https://github.com/MateoLa/Spree_Social_Sales.
 Adds a gravatar to the SSS user account.
 

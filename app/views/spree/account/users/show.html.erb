@@ -25,7 +25,7 @@
 <div data-hook="account_avatar" class="account-summary well">
   <dl>
     <dt><%= Spree.t(:avatar) %></dt>
-    <dd><%= image_tag gavatar_url(@user), size: 128, :style => 'margin-right:20px;' %>
+    <dd><%= image_tag avatar_url(@user), size: 128, :style => 'margin-right:20px;' %>
       <%= link_to spree.avatar_account_user_path, class: "btn btn-primary btn-sm" do %>
         <span class="glyphicon glyphicon-pencil"></span>
       <% end if can? :avatar, @user %>
