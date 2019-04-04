@@ -1,9 +1,9 @@
 <% content_for :account_sidebar do %>
-  <%= render partial: 'spree/account/shared/sidebar', locals: {current: :account} %>
+  <%= render partial: 'spree/account/shared/account_sidebar', locals: {current: :account} %>
 <% end %>
 
 <% content_for :account_title do %>
-  <%= Spree.t(:account) %>
+  <%= Spree.t(:user_profile) %>
 <% end %>
 
 <div data-hook="account_summary" class="account-summary well">

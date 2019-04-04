@@ -1,7 +1,7 @@
 <%= render partial: 'spree/shared/error_messages', locals: { target: @user} %>
 
 <% content_for :account_sidebar do %>
-  <%= render partial: 'spree/account/shared/sidebar', locals: { current: :account } %>
+  <%= render partial: 'spree/account/shared/account_sidebar', locals: { current: :account } %>
 <% end %>
 
 <div data-hook="avatar_title">
