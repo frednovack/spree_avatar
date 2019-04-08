@@ -8,27 +8,35 @@
 
 <div data-hook="account_summary" class="account-summary well">
   <dl id="user-info">
-    <dt><%= Spree.t(:email) %></dt>
-    <dd><%= @user.email %>
-        <%= link_to spree.edit_account_user_path, class: "btn btn-primary btn-sm", :style => 'margin-left:20px;' do %>
-          <span class="glyphicon glyphicon-pencil"></span>
-        <% end if can? :edit, @user %>
-    </dd>
-    <br />
-    <dt><%= Spree.t(:credit_balance, scope: [:store_credits])%></dt>
-    <dd>
-      <%= Spree::Money.new(spree_current_user.total_available_store_credit, currency: Spree::Config[:currency]) %>
-    </dd>
-  </dl>
-</div>
-
-<div data-hook="account_avatar" class="account-summary well">
-  <dl>
-    <dt><%= Spree.t(:avatar) %></dt>
-    <dd><%= image_tag avatar_url(@user), size: 128, :style => 'margin-right:20px;' %>
-      <%= link_to spree.avatar_account_user_path, class: "btn btn-primary btn-sm" do %>
-        <span class="glyphicon glyphicon-pencil"></span>
-      <% end if can? :avatar, @user %>
-    </dd>
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <dt><%= Spree.t(:email) %></dt>
+        <dd><%= @user.email %>
+            <%= link_to spree.edit_account_user_path(goto: "passwd"), class: "btn btn-primary btn-sm" do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+            <% end if can? :edit, @user %>
+        </dd>
+        <br />
+        <dt><%= Spree.t(:avatar) %></dt>
+        <dd><%= image_tag avatar_url(@user), size: 128 %>
+          <%= link_to spree.avatar_account_user_path, class: "btn btn-primary btn-sm" do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end if can? :avatar, @user %>
+        </dd>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <dt><%= Spree.t(:user_name) %></dt>
+        <dd><%= @user_name %>
+            <%= link_to spree.edit_account_user_path(goto: "name"), class: "btn btn-primary btn-sm" do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+            <% end if can? :edit, @user %>
+        </dd>
+        <br />      
+        <dt><%= Spree.t(:credit_balance, scope: [:store_credits])%></dt>
+        <dd>
+          <%= Spree::Money.new(spree_current_user.total_available_store_credit, currency: Spree::Config[:currency]) %>
+        </dd>
+      </div>
+    </div>
   </dl>
 </div>
