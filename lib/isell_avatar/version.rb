@@ -1,3 +1,3 @@
-module SssAvatar
+module IsellAvatar
   VERSION = '1.0.0'
 end

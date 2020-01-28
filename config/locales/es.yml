@@ -1,0 +1,6 @@
+---
+es:
+  spree:
+    edit_picture: "Editar Imagen"
+    user_picture: "Imagen de Cuenta"
+    user_picture_error: "Ha ocurrido un error intentando actualizar tu imagen. Por favor intentalo nuevamente."

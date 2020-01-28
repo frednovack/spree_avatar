@@ -1,10 +1,10 @@
-Spree::Core::Engine.routes.draw do
+Spree::Core::Engine.add_routes do
 
-  namespace :account do
-    resource :user, :path => '' do
-      get :avatar
-      put :avatar
-    end
+  resources :users, only: [:edit, :update], :path => 'account'
+
+  resources :users, :only => [], :path => 'account' do
+    get :picture
+    put :picture
   end
 
 end

@@ -1,5 +1,7 @@
-Spree::User.class_eval do
-
-  has_one_attached :avatar, dependent: :destroy
-
+module Spree::UserDecorator
+  def self.prepended(base)
+    base.has_one_attached :picture, dependent: :destroy
+  end
 end
+
+Spree::User.prepend Spree::UserDecorator

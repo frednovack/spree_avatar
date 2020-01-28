@@ -1,0 +1,29 @@
+<div class="container account-page">
+
+  <h3 class="text-uppercase spree-mb-large spree-mt-large spree-header" >
+    <%= Spree.t('edit_picture') %></h3>
+
+  <div data-hook="edit_user_picture">
+    <%= form_for @user, url: user_picture_url, method: :put do |f| %>
+      <div class="row" data-hook="edit_user_picture_form_fields">
+        <div class="col-12 col-lg-6">
+          <div class="form-group" data-hook="user_picture">
+            <%= f.label Spree.t(:user_picture), class: "d-block text-center" %>
+            <% if @user.picture.attached? %>
+              <%= image_tag(main_app.url_for(@user.picture), class: "user-picture", size: 256) %>
+            <% else %>
+              <%= inline_svg_tag("isell_avatar/person.svg", class: "no-user-picture", size: 256) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="form-group align-bottom" data-hook="attachment">
+            <%= f.label :picture, Spree.t(:filename) %>
+            <%= f.file_field :picture %>
+          </div>
+            <%= f.submit Spree.t(:update), class: 'btn btn-primary btn-block spree-btn mb-5' %>
+        </div>
+      </div>
+    <% end if can? :picture, @user  %>
+  </div>
+</div>

@@ -1,12 +1,12 @@
-# Sss Avatar
-This is a ROR plugin to use with https://github.com/MateoLa/Spree_Social_Sales.
-Adds an avatar to the SSS user account.
+# Isell Avatar
+This is a RoR plugin to use with Spree and ([Isell](https://github.com/MateoLa/Isell)).
+Adds a user picture to Spree user account.
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sss_avatar', github: 'MateoLa/sss_avatar'
+gem 'isell_avatar', github: 'MateoLa/isell_avatar'
 ```
 
 And then execute:
@@ -15,7 +15,7 @@ $ bundle
 ```
 
 ```rails
-$ rails g sss_avatar:install
+$ rails g isell_avatar:install
 ```
 
 ## License

@@ -1,0 +1,21 @@
+.user-picture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+.no-user-picture {
+	opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+  color: grey;
+  width: 100%;
+}
+
+.picture-link:hover {
+	text-decoration: none !important;
+}
+
+.picture-button {
+	pointer-events: none;
+}
+    
