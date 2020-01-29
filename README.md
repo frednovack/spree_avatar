@@ -1,6 +1,6 @@
 # Isell Avatar
 This is a RoR plugin to use with Spree and ([Isell](https://github.com/MateoLa/Isell)).
-Adds a user picture to Spree user account.
+Adds a user picture to the user account.
 
 ## Installation
 Add this line to your application's Gemfile:
