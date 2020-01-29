@@ -1,11 +1,11 @@
 module Spree
-  class AvatarAbility
+  class PictureAbility
     include CanCan::Ability
 
     def initialize(user)
       user ||= Spree.user_class.new    	
-	  can :avatar, Spree.user_class, :id => user.id
-	end
+	  	can :picture, Spree.user_class, id: user.id
+		end
 
   end
 end

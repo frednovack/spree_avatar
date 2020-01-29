@@ -6,7 +6,7 @@ require "isell_avatar/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
   spec.platform    = Gem::Platform::RUBY  
-  spec.name        = "is_avatar"
+  spec.name        = "isell_avatar"
   spec.version     = IsellAvatar::VERSION
   spec.summary     = "Isell Avatar"
   spec.description = "Adds a picture to the user account."
