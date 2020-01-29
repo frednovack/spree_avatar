@@ -1,6 +1,10 @@
 ---
 en:
   spree:
-    edit_picture: "Edit Picture"
-    user_picture: "Account Picture"
+    picture_action_popup:
+      delete_button: Yes, Delete      
+      delete_title: Are you Sure?
+      delete_text: Do you really want<br />to delete your picture?      
+    edit_picture: Edit Picture
+    user_picture: Account Picture
     user_picture_error: "An error ocurred trying to update your picture. Please try again."

@@ -2,24 +2,25 @@
   <h3 class="text-uppercase spree-mb-large spree-mt-large spree-header" ><%= accurate_title %></h3>
 
   <div class="row">
-    <div class="col-xs-12 col-lg-4">
-      <div class="account-picture">
-        <div class="d-block text-center mb-3">
-          <%= Spree.t(:user_picture) %>
-        </div>
+    <div class="col-xs-12 col-lg-4" data-hook="account-picture">
+      <% if @user.picture.attached?
+          url = main_app.url_for(@user.picture)
+          image = image_tag(url, size: 150)
+        else
+          url = "isell_avatar/person.svg"
+          image = inline_svg_tag(url, class: "no-user-picture", size: "150px*150px")
+        end %>
+      <div class="d-block text-center mb-3">
+        <%= Spree.t(:user_picture) %>
+      </div>
+      <div class="text-center">
+        <%= link_to image, spree.user_picture_path(@user), class: "edit-picture-link" %>
+        <%= link_to inline_svg_tag('edit.svg'), spree.user_picture_path(@user), class: "edit-picture-link" %>
         <% if @user.picture.attached? %>
-          <%= link_to image_tag(main_app.url_for(@user.picture), class: "user-picture", size: 150), spree.user_picture_path(@user) %>
-        <% else %>
-          <%= inline_svg_tag "isell_avatar/person.svg", class: "no-user-picture", size: 150 %>
+          <div class="delete-picture-button js-delete-picture-button" data-picture="<%= spree.user_delete_picture_path(@user) %>">
+            <%= inline_svg_tag 'garbage_2.svg' %>
+          </div>
         <% end %>
-
-        <%= link_to inline_svg_tag('edit.svg'), spree.user_picture_path(@user), class: "picture-link mr-1" %>
-
-        <%= button_tag class: "btn btn-outline-primary border-0 p-0 m-0 picture-button delete-button js-delete-address-link", data_address: spree.user_picture_path(@user) do %>
-          <%= inline_svg_tag 'garbage_2.svg' %>
-        <% end %>
-
-
       </div>
     </div>
 
@@ -97,4 +98,7 @@
   <div id="delete-address-popup" class="delete-address-popup-dropdown hide-on-esc">
     <%= render 'spree/shared/delete_address_popup' %>
   </div>
+  <div id="delete-picture-popup" class="delete-address-popup-dropdown hide-on-esc">
+    <%= render 'spree/shared/delete_picture_popup' %>
+  </div>  
 </div>

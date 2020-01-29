@@ -1,17 +1,22 @@
 module Spree::UsersControllerDecorator
   def self.prepended(base)
-    base.before_action :load_object, on: [:picture]
+    base.before_action :load_object, on: [:picture, :delete_picture]
   end
 
   def picture
     if request.put?
-      if @user.update_attributes(user_params)
+      if @user.update(user_params)
         flash[:success] = Spree.t(:account_updated)
       else
         flash[:error] = Spree.t(:user_picture_error)
       end
-      render :show
+      redirect_to account_url
     end
+  end
+
+  def delete_picture
+    @user.picture.purge
+    redirect_to account_url
   end
 
   private
