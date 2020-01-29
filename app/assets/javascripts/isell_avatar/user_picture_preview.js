@@ -10,6 +10,8 @@ function readURL(input) {
   }
 }
 
-$("#user-picture-file").change(function(){
-  readURL(this);
+Spree.ready(function($) {
+	$("#user-picture-file").change(function(){
+  	readURL(this);
+	});
 });

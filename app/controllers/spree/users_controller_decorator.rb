@@ -7,6 +7,8 @@ module Spree::UsersControllerDecorator
     if request.put?
       if @user.update(user_params)
         flash[:success] = Spree.t(:account_updated)
+      elsif @user.errors[:picture]
+        flash[:error] = @user.errors[:picture].join(". ")
       else
         flash[:error] = Spree.t(:user_picture_error)
       end

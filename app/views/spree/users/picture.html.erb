@@ -8,14 +8,8 @@
       <div class="mb-3">
         <%= Spree.t(:user_picture) %>
       </div>
-      <% if @user.picture.attached?
-        url = main_app.url_for(@user.picture)
-        pikclass = ""
-      else
-        url = "isell_avatar/person.svg"
-        pikclass = "no-user-picture"
-      end %>
-      <%= image_tag(url, id: "user-picture-preview", class: pikclass, size: 256) %>
+      <% @user.picture.attached? ? url = main_app.url_for(@user.picture) : url = "isell_avatar/person.svg" %>
+      <%= image_tag(url, id: "user-picture-preview", size: 256) %>
     </div>
     
     <div class="col-12 col-lg-6">

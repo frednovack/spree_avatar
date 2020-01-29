@@ -6,9 +6,9 @@ require "isell_avatar/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
   spec.platform    = Gem::Platform::RUBY  
-  spec.name        = "isell_avatar"
+  spec.name        = "is_avatar"
   spec.version     = IsellAvatar::VERSION
-  spec.summary     = "Avatar for Isell"
+  spec.summary     = "Isell Avatar"
   spec.description = "Adds a picture to the user account."
 
   spec.authors     = ["MateoLa"]
@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 6.0.2", ">= 6.0.2.1"
-  spec.add_dependency "spree_core", "~> 4.0"  
+  spec.add_dependency "spree_core", "~> 4.0"
+  spec.add_dependency "active_storage_validations"
   
 end
