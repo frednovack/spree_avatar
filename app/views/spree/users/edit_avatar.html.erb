@@ -14,13 +14,13 @@
     
     <div class="col-12 col-lg-6">
       <div class="user-avatar-form">
-        <%= form_for @user, url: user_avatar_url, method: :put do |f| %>
+        <%= form_for @user, url: user_update_avatar_url, method: :put do |f| %>
           <div class="form-group">
             <%= f.label :avatar, Spree.t(:filename) %>
             <%= f.file_field :avatar, id: "user-avatar-file" %>
           </div>
           <%= f.submit Spree.t(:update), class: 'btn btn-primary btn-block spree-btn mb-5' %>
-        <% end if can? :avatar, @user  %>
+        <% end if can? :update_avatar, @user  %>
       </div>
     </div>
   </div>

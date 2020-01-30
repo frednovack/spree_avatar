@@ -11,6 +11,7 @@
 .delete-avatar-button {
 	color: #0074c2;
 	display: inline-block;
+	margin-left: 15px;
 }
 
 .user-avatar-form {
