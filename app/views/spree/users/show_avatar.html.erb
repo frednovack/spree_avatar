@@ -20,8 +20,11 @@
   </div>
   <% if @user.avatar.attached? %>
     <div class="text-center mt-3 mb-5">
-      <div class="avatar_as_ikon js-use-avatar-as-ikon">
-        <%= check_box_tag :is_ikon %>
+      <div class="avatar_as_ikon">
+        <%= check_box_tag :is_ikon,
+            class: "use-avatar-as-ikon js-use-avatar-as-ikon",
+            'data-user-id': @user.id
+         %>
         <%= Spree.t(:avatar_is_ikon) %>
       </div>
     </div>
