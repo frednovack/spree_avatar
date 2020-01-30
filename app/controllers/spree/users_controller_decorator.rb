@@ -1,30 +1,30 @@
 module Spree::UsersControllerDecorator
   def self.prepended(base)
-    base.before_action :load_object, on: [:picture, :delete_picture]
+    base.before_action :load_object, on: [:avatar, :delete_avatar]
   end
 
-  def picture
+  def avatar
     if request.put?
       if @user.update(user_params)
         flash[:success] = Spree.t(:account_updated)
-      elsif @user.errors[:picture]
-        flash[:error] = @user.errors[:picture].join(". ")
+      elsif @user.errors[:avatar]
+        flash[:error] = @user.errors[:avatar].join(". ")
       else
-        flash[:error] = Spree.t(:user_picture_error)
+        flash[:error] = Spree.t(:user_avatar_error)
       end
       redirect_to account_url
     end
   end
 
-  def delete_picture
-    @user.picture.purge
+  def delete_avatar
+    @user.avatar.purge
     redirect_to account_url
   end
 
   private
 
   def user_params
-    params.require(:user).permit(permitted_user_attributes | [:picture])
+    params.require(:user).permit(permitted_user_attributes | [:avatar])
   end
 
   def load_object

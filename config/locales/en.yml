@@ -6,10 +6,10 @@ en:
       file_size_out_of_range: "File to big, must be less than 5MB in size"
 
   spree:
-    picture_action_popup:
+    avatar_action_popup:
       delete_button: Yes, Delete      
       delete_title: Are you Sure?
-      delete_text: Do you really want<br />to delete your picture?      
-    edit_picture: Edit Picture
-    user_picture: Account Picture
-    user_picture_error: "An error ocurred trying to update your picture. Please try again."
+      delete_text: Do you really want<br />to delete your avatar?      
+    edit_avatar: Edit Picture
+    user_avatar: Account Picture
+    user_avatar_error: "An error ocurred trying to update your picture. Please try again."

@@ -1,18 +1,17 @@
-module IsellAvatar
+module SpreeAvatar
   class Engine < ::Rails::Engine
-    engine_name 'isell_avatar'
+    engine_name 'spree_avatar'
 
-  	initializer "isell_avatar.assets.precompile" do |app|
+  	initializer "spree_avatar.assets.precompile" do |app|
 #      app.config.assets.paths << File.expand_path("../../assets/images", __FILE__)
-	    app.config.assets.precompile += %w( isell_avatar/*.svg )
-#            'lib/assets/javascripts/spree/backend/spree_auth.css'
+	    app.config.assets.precompile += %w( spree_avatar/*.svg )
     end
 
     config.to_prepare do
       Dir.glob(File.join(File.dirname(__FILE__), "../../app/**/*_decorator.rb")) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
       end
-      Spree::Ability.register_ability(Spree::PictureAbility)
+      Spree::Ability.register_ability(Spree::AvatarAbility)
     end
 
   end

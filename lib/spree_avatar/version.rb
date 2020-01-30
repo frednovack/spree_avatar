@@ -1,3 +1,3 @@
-module IsellAvatar
+module SpreeAvatar
   VERSION = '1.0.0'
 end

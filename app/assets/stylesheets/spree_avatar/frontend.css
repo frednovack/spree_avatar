@@ -1,19 +1,19 @@
-.no-user-picture {
+.no-user-avatar {
 	opacity: 0.5;
   filter: alpha(opacity=50); /* For IE8 and earlier */
   color: grey;
 }
 
-.edit-picture-link:hover {
+.edit-avatar-link:hover {
 	text-decoration: none !important;
 }
 
-.delete-picture-button {
+.delete-avatar-button {
 	color: #0074c2;
 	display: inline-block;
 }
 
-.user-picture-form {
+.user-avatar-form {
 	position: absolute;
 	width: 100%;
 	bottom: 0;
