@@ -1,0 +1,25 @@
+<div class="col-xs-12 col-lg-4" data-hook="account-avatar">
+  <% if @user.avatar.attached?
+      url = main_app.url_for(@user.avatar)
+      image = image_tag(url, size: 150)
+    else
+      url = "spree_avatar/person.svg"
+      image = inline_svg_tag(url, class: "no-user-avatar", size: "150px*150px")
+    end %>
+  <div class="d-block text-center mb-3">
+    <%= Spree.t(:user_avatar) %>
+  </div>
+  <div class="text-center">
+    <%= link_to image, spree.user_avatar_path(@user), class: "edit-avatar-link" %>
+    <%= link_to inline_svg_tag('edit.svg'), spree.user_avatar_path(@user), class: "edit-avatar-link" %>
+    <% if @user.avatar.attached? %>
+      <div class="delete-avatar-button js-delete-avatar-button" data-avatar="<%= spree.user_delete_avatar_path(@user) %>">
+        <%= inline_svg_tag 'garbage_2.svg' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div id="delete-avatar-popup" class="delete-address-popup-dropdown hide-on-esc">
+  <%= render 'spree/shared/delete_avatar_popup' %>
+</div>
