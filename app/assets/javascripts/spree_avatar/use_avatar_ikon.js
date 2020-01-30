@@ -1,7 +1,7 @@
 Spree.ready(function($) {
-  var deleteAvatarButtons = document.querySelectorAll('.js-delete-avatar-button');
-  if (deleteAvatarButtons.length > 0) {
-    deleteAvatarButtons.forEach(function(deleteButton) {
+  var deletePictureButtons = document.querySelectorAll('.js-delete-avatar-button');
+  if (deletePictureButtons.length > 0) {
+    deletePictureButtons.forEach(function(deleteButton) {
       deleteButton.addEventListener('click', function(e) {
         document.querySelector('#overlay').classList.add('shown');
         document.querySelector('#delete-avatar-popup').classList.add('shown');
@@ -11,8 +11,8 @@ Spree.ready(function($) {
   }
 
   document.querySelector('#overlay').addEventListener('click', function () {
-    var avatarActionElement = document.querySelector('#delete-avatar-popup');
-    if (avatarActionElement) avatarActionElement.classList.remove('shown');
+    var addressActionElement = document.querySelector('#delete-avatar-popup');
+    if (addressActionElement) addressActionElement.classList.remove('shown');
   }, false);
 
   var popupCloseButtons = document.querySelectorAll('.js-delete-avatar-popup-close-button')

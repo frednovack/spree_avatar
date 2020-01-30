@@ -19,13 +19,11 @@
     <% end %>
   </div>
   <% if @user.avatar.attached? %>
-    <div>
-      <%= fields_for @user do |form| %>
-        <%= form.check_box :use_avatar_icon %>
-        <%= form.label :use_avatar_icon, "Use avatar_icon" %>
-      <% end %>
-
-
+    <div class="text-center mt-3 mb-5">
+      <div class="avatar_as_ikon js-use-avatar-as-ikon">
+        <%= check_box_tag :is_ikon %>
+        <%= Spree.t(:avatar_is_ikon) %>
+      </div>
     </div>
   <% end %>
 </div>

@@ -9,7 +9,8 @@ en:
     avatar_action_popup:
       delete_button: Yes, Delete      
       delete_title: Are you Sure?
-      delete_text: Do you really want<br />to delete your picture?      
+      delete_text: Do you really want<br />to delete your picture?
+    avatar_is_ikon: Use as menu icon?     
     edit_avatar: Edit Picture
     user_avatar: Account Picture
     user_avatar_error: "An error ocurred trying to update your picture. Please try again."
