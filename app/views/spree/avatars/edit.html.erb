@@ -1,26 +1,29 @@
 <div class="container account-page">
 
   <h3 class="text-uppercase spree-mb-large spree-mt-large spree-header" >
-    <%= Spree.t('edit_picture') %></h3>
+    <%= Spree.t(:edit_avatar) %></h3>
 
   <div class="row">
     <div class="col-12 col-lg-6 d-block text-center">
       <div class="mb-3">
         <%= Spree.t(:user_avatar) %>
       </div>
-      <% @user.avatar.attached? ? url = main_app.url_for(@user.avatar) : url = "spree_avatar/person.svg" %>
-      <%= image_tag(url, id: "user-avatar-preview", size: 256) %>
+      <%= image_tag(main_app.url_for(@user.avatar), id: "js-user-avatar-preview", size: 256) %>
     </div>
     
     <div class="col-12 col-lg-6">
       <div class="user-avatar-form">
-        <%= form_for @user, url: user_update_avatar_url, method: :put do |f| %>
+        <%= form_for @user, url: user_avatar_url, method: :put do |f| %>
+          <div class="form-group mt-3 mb-5">
+            <%= f.check_box :avatar_ikon, checked: @user.avatar_ikon %>
+            <%= Spree.t(:avatar_ikon) %>
+          </div>
           <div class="form-group">
             <%= f.label :avatar, Spree.t(:filename) %>
-            <%= f.file_field :avatar, id: "user-avatar-file" %>
+            <%= f.file_field :avatar, id: "js-user-avatar-file" %>
           </div>
           <%= f.submit Spree.t(:update), class: 'btn btn-primary btn-block spree-btn mb-5' %>
-        <% end if can? :update_avatar, @user  %>
+        <% end if can? :update, @user  %>
       </div>
     </div>
   </div>

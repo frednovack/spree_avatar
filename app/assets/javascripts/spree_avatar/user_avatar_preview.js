@@ -3,7 +3,7 @@ function readURL(input) {
     var reader = new FileReader();
 
     reader.onload = function (e) {
-      $('#user-avatar-preview').attr('src', e.target.result);
+      $('#js-user-avatar-preview').attr('src', e.target.result);
     }
 
     reader.readAsDataURL(input.files[0]);
@@ -11,7 +11,7 @@ function readURL(input) {
 }
 
 Spree.ready(function($) {
-	$("#user-avatar-file").change(function(){
+	$("#js-user-avatar-file").change(function(){
   	readURL(this);
 	});
 });

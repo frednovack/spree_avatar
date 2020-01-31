@@ -1,14 +1,18 @@
+.avatar-ikon {
+  filter: grayscale(100%);	
+}
+
 .no-user-avatar {
 	opacity: 0.5;
   filter: alpha(opacity=50); /* For IE8 and earlier */
   color: grey;
 }
 
-.edit-avatar-link:hover {
+.avatar-link:hover {
 	text-decoration: none !important;
 }
 
-.delete-avatar-button {
+.js-delete-avatar-button {
 	color: #0074c2;
 	display: inline-block;
 	margin-left: 15px;

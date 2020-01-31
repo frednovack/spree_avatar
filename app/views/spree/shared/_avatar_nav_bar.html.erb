@@ -1,0 +1,29 @@
+  <li>
+    <div class="dropdown navbar-right-dropdown">
+      <button id="spree-ikon" type="button" data-toggle="dropdown" class="navbar-right-dropdown-toggle" aria-label="<%= Spree.t('nav_bar.show_user_menu')%>">
+        <%= icon(name: 'person',
+                classes: 'd-none d-xl-inline-block',
+                width: 41.4,
+                height: 36)  %>
+        <%= icon(name: 'person',
+                classes: 'd-xl-none',
+                width: 27.6,
+                height: 24)  %>
+      </button>
+      <% if spree_current_user.present? %>
+        <button id="avatar-ikon" type="button" data-toggle="dropdown" class="navbar-right-dropdown-toggle" aria-label="<%= Spree.t('nav_bar.show_user_menu')%>">
+          <%#= image_tag(name: 'person',
+                  url: url_for(spree_current_user.avatar),
+                  :class => 'd-none d-xl-inline-block image-ikon',
+                  size: 40) %>
+          <%#= image_tag(name: 'person',
+                  url: url_for(spree_current_user.avatar),
+                  :class => 'd-xl-none image-ikon',
+                  size: 27) %>
+        </button>
+      <% end %>
+
+      <div id="link-to-account" class="dropdown-menu dropdown-menu-right text-right" data-turbolinks-permanent>
+      </div>
+    </div>
+  </li>
