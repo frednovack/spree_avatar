@@ -1,6 +1,0 @@
-Deface::Override.new(
-  virtual_path: "spree/shared/_nav_bar",
-  name: "add_avatar_to_nav_bar",
-  replace_contents: "erb[silent]:contains('if defined?(spree.account_link_path)')",
-  partial: "spree/shared/avatar_nav_bar",
-)

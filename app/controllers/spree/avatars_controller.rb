@@ -22,7 +22,7 @@ module Spree
     private
 
     def avatar_params
-      params.require(:user).permit(:avatar, :avatar_ikon)
+      params.require(:user).permit(:avatar)
     end
 
     def load_object
