@@ -2,7 +2,7 @@ module SpreeAvatar
   module Generators
     class InstallGenerator < ::Rails::Generators::Base
 
-      class_option :migrate, type: :boolean, default: false
+      class_option :auto_run_migrations, type: :boolean, default: false
 
       def add_assets_to_spree
         # "Injecting into File" avoids the need to override layouts adding scripts or stylesheets tags.
@@ -15,7 +15,7 @@ module SpreeAvatar
       end
 
       def run_migrations
-        run_migrations = options[:migrate] || ['', 'y', 'Y'].include?(ask 'Would you like to run migrations now? [Y/n]')
+        run_migrations = options[:auto_run_migrations] || ['', 'y', 'Y'].include?(ask 'Would you like to run migrations now? [Y/n]')
         if run_migrations
           run 'bundle exec rake db:migrate'
         else
