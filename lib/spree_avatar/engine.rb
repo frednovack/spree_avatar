@@ -1,5 +1,5 @@
 module SpreeAvatar
-  class Engine < ::Rails::Engine
+  class Engine < Rails::Engine
     engine_name 'spree_avatar'
 
   	initializer "spree_avatar.assets.precompile" do |app|
