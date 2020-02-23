@@ -1,6 +1,7 @@
 # Spree Avatar
-RoR plugin to use with Spree.
-Adds an avatar to the user account.
+Spree Avatar extension adds an avatar to the user.
+Afterwards it could be shown, for instance to send messages.
+RoR plugin to use with Spree (4.1 ready).
 
 ## Installation
 Add this line to your application's Gemfile:
