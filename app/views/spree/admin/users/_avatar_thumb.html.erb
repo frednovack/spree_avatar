@@ -1,0 +1,7 @@
+<td>
+  	<% if user.avatar.attached? %>
+		<%= image_tag main_app.url_for(user.avatar), width: "35px" %>
+	<% else %>
+		<%= inline_svg_tag "person.svg", size: "35px*35px" %>
+	<% end %>
+</td>

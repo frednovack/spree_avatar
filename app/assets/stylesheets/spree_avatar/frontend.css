@@ -1,3 +1,7 @@
+/*
+ *= require spree_avatar/avatar_popup
+*/
+
 .avatar-ikon {
   filter: grayscale(100%);	
 }

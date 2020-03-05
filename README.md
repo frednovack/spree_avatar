@@ -12,7 +12,7 @@ gem 'spree_avatar', github: 'MateoLa/spree_avatar'
 
 And then execute:
 ```bash
-$ bundle
+$ bundle update
 ```
 
 ```rails

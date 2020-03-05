@@ -7,6 +7,7 @@ module SpreeAvatar
         # adding scripts or stylesheets tags lines.
         inject_into_file 'vendor/assets/javascripts/spree/frontend/all.js', "\n//= require spree_avatar/frontend", after: "spree/frontend", verbose: true
         inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', "\n *= require spree_avatar/frontend", after: "spree/frontend", verbose: true
+        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', "\n *= require spree_avatar/backend", after: "spree/backend", verbose: true
       end
 
     end

@@ -5,7 +5,6 @@ function readURL(input) {
     reader.onload = function (e) {
       $('#js-user-avatar-preview').attr('src', e.target.result);
     }
-
     reader.readAsDataURL(input.files[0]);
   }
 }

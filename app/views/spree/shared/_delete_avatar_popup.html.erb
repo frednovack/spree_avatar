@@ -1,21 +1,21 @@
-<div class="mx-auto delete-address-popup">
-  <div class="d-flex delete-address-popup-icon js-delete-avatar-popup-close-button">
+<div class="mx-auto delete-avatar-popup">
+  <div class="d-flex delete-avatar-popup-icon js-delete-avatar-popup-close-button">
     <%= inline_svg_tag "close.svg", class: "w-100 h-100" %>
   </div>
 
-  <p class="delete-address-popup-header">
+  <p class="delete-avatar-popup-header">
     <%= Spree.t("avatar_action_popup.delete_title") %>
   </p>
 
-  <p class='delete-address-popup-text'>
+  <p class='delete-avatar-popup-text'>
     <%= Spree.t("avatar_action_popup.delete_text").html_safe %>
   </p>
 
-  <div class="d-flex delete-address-popup-buttons">
-    <div class="btn bg-light-background text-primary border-2 border-primary text-uppercase font-weight-bold delete-address-popup-button js-delete-avatar-popup-close-button"><%= Spree.t(:cancel) %></div>
+  <div class="d-flex delete-avatar-popup-buttons">
+    <div class="btn bg-light-background text-primary border-2 border-primary text-uppercase font-weight-bold delete-avatar-popup-button js-delete-avatar-popup-close-button"><%= Spree.t(:cancel) %></div>
     <a
       id="delete-avatar-popup-confirm"
-      class="btn btn-primary text-uppercase font-weight-bold delete-address-popup-button"
+      class="btn btn-primary text-uppercase font-weight-bold delete-avatar-popup-button"
       data-method="delete"
       rel="nofollow"
       href="#"
