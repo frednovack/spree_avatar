@@ -1,9 +1,8 @@
 Deface::Override.new(
   virtual_path: "spree/admin/users/index",
   name: "add_avatar_header_to_users_table",
-  insert_top: '#listing_users [data-hook="admin_users_index_headers"]',
-  text: '<th data-hook="admin_users_index_avatar"></th>',
-  original: '3ea9526890b728700da55ea33992e4e48ef028a8'
+  set_attributes: '#listing_users [data-hook="admin_users_index_headers"] th:first',
+  attributes: {colspan: "2"}
 )
 
 
