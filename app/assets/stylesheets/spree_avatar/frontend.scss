@@ -1,0 +1,12 @@
+
+// Import only needed bootstrap functions, variables & mixins
+// In this way we avoid importing bootstrap CSS again to not crash Spree Styling
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins/breakpoints";
+
+@import "spree/frontend/variables/variables";
+
+
+@import "spree_avatar/views/users/show_avatar";
+@import "spree_avatar/views/users/delete_avatar_popup";

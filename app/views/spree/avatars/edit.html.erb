@@ -4,21 +4,21 @@
     <%= Spree.t(:edit_avatar) %></h3>
 
   <div class="row">
-    <div class="col-12 col-lg-6 d-block text-center">
+    <div class="col-12 col-lg-6 text-center">
       <div class="mb-3">
         <%= Spree.t(:user_avatar) %>
       </div>
       <%= image_tag(main_app.url_for(@user.avatar), id: "js-user-avatar-preview", size: 256) %>
     </div>
     
-    <div class="col-12 col-lg-6">
-      <div class="user-avatar-form">
+    <div class="col-12 col-lg-6 d-flex align-items-center">
+      <div class="w-100">
         <%= form_for @user, url: user_avatar_url, method: :put do |f| %>
           <div class="form-group">
             <%= f.label :avatar, Spree.t(:filename) %>
             <%= f.file_field :avatar, id: "js-user-avatar-file" %>
           </div>
-          <%= f.submit Spree.t(:update), class: 'btn btn-primary btn-block spree-btn mb-5' %>
+          <%= f.submit Spree.t(:update), class: 'btn btn-block btn-primary spree-btn' %>
         <% end if can? :update, @user  %>
       </div>
     </div>

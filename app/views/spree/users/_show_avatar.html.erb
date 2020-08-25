@@ -1,19 +1,16 @@
-<div class="col-xs-12 col-lg-4" data-hook="account-avatar">
-  <div class="d-block text-center mb-3">
-    <%= Spree.t(:user_avatar) %>
-  </div>
-  <div class="text-center">
+<div data-hook="account-avatar">
+  <div class="mb-3"><%= Spree.t(:user_avatar) %></div>
+  <div>
     <% if @user.avatar.attached? %>
-      <%= link_to image_tag(main_app.url_for(@user.avatar), size: 150), spree.edit_user_avatar_path(@user), class: "avatar-link" %>
-      <div class="js-delete-avatar-button" data-avatar="<%= spree.user_avatar_path(@user) %>">
-        <%= inline_svg_tag 'garbage_2.svg' %>
-      </div>
+      <%= link_to image_tag(main_app.url_for(@user.avatar), size: 150), spree.edit_user_avatar_path(@user), class: "mx-3" %>
+      <%= link_to inline_svg_tag("garbage_2.svg", class: "ml-2"), spree.user_avatar_path(@user), id: "js-delete-avatar", class: "avatar-link", remote: true %>
+      <%= link_to inline_svg_tag("edit.svg", class: "ml-2"), spree.edit_user_avatar_path(@user), class: 'avatar-link' %>
     <% else %>
       <%= link_to inline_svg_tag("person.svg", class: "no-user-avatar", size: "150px*150px"), spree.new_user_avatar_path(@user), class: "avatar-link" %>
     <%  end %>
   </div>
 </div>
 
-<div id="delete-avatar-popup" class="delete-address-popup-dropdown hide-on-esc">
-  <%= render 'spree/shared/delete_avatar_popup' %>
+<div id="delete-avatar-popup" class="delete-avatar-popup-dropdown hide-on-esc">
+  <%= render 'spree/users/delete_avatar_popup' %>
 </div>

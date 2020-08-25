@@ -1,13 +1,13 @@
 Spree.ready(function($) {
-  var deleteAvatarButtons = document.querySelectorAll('.js-delete-avatar-button');
-  if (deleteAvatarButtons.length > 0) {
-    deleteAvatarButtons.forEach(function(deleteButton) {
-      deleteButton.addEventListener('click', function(e) {
-        document.querySelector('#overlay').classList.add('shown');
-        document.querySelector('#delete-avatar-popup').classList.add('shown');
-        document.querySelector('#delete-avatar-popup-confirm').href = e.currentTarget.dataset.avatar;
-      }, false)
-    })
+  var deleteAvatarButton = document.querySelector('#js-delete-avatar');
+  if ( deleteAvatarButton ) {
+    deleteAvatarButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      document.querySelector('#overlay').classList.add('shown');
+      document.querySelector('#delete-avatar-popup').classList.add('shown');
+      document.querySelector('#delete-avatar-popup-confirm').href = event.currentTarget.href;
+    }, false)
   }
 
   document.querySelector('#overlay').addEventListener('click', function () {

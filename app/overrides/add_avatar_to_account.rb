@@ -1,6 +1,6 @@
 Deface::Override.new(
   virtual_path: "spree/users/show",
   name: "add_avatar_to_account",
-  insert_top: "div.account-page > div.row:first-of-type",
+  insert_bottom: "div.account-page .col-lg-4:first",
   partial: "spree/users/show_avatar",
 )

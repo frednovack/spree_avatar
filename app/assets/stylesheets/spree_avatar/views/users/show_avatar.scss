@@ -1,0 +1,9 @@
+.avatar-link:hover {
+	text-decoration: none !important;
+}
+
+.no-user-avatar {
+  opacity: 0.5;
+  filter: opacity(50%); /* For IE8 and earlier */
+  color: grey;
+}

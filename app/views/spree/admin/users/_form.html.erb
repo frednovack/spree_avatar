@@ -5,7 +5,7 @@
         <%= image_tag(main_app.url_for(@user.avatar), size: 150) %>
         <%= link_to inline_svg_tag("garbage_2.svg"),
                     spree.admin_user_avatar_path(@user),
-                    class: "admin-avatar-link",
+                    class: "ml-3",
                     method: "delete" %>
       <% else %>
         <%= inline_svg_tag("person.svg", size: "150px*150px") %>

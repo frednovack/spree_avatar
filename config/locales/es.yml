@@ -4,12 +4,11 @@ en:
     messages:
       content_type_invalid: "Debe ser una imagen (png, jpg or jpeg)"
       file_size_out_of_range: "Archivo muy grande, debe ser menor a 5MB."
-
   spree:
     avatar_deleted: Imagen Borrada    
     avatar_action_popup:
       delete_button: Si, Borrar
-      delete_title: Estás segur@?
+      delete_title: ¿Estás segur@?
       delete_text: Realmente quieres<br />borrar tu imagen?
     edit_avatar: Editar Imagen
     user_avatar: Imagen de la Cuenta

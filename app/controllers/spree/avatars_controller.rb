@@ -16,7 +16,7 @@ module Spree
 
     def destroy
       @user.avatar.purge
-      redirect_to account_url
+      redirect_to spree.account_url
     end
 
     private
