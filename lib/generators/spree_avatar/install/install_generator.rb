@@ -2,6 +2,9 @@ module SpreeAvatar
   module Generators
     class InstallGenerator < Rails::Generators::Base
 
+      #Needed by copy_views
+      source_root SpreeAvatar::Engine.root
+
       def add_assets_to_spree
         # "Injecting to File" avoids the need to override layouts
         # adding scripts or stylesheets tag lines.
@@ -12,7 +15,7 @@ module SpreeAvatar
       def copy_views
         dirs_to_copy = ['avatars', 'users']
         dirs_to_copy.each do |dir|
-          orig = 'views/spree/' + dir
+          orig = 'app/views/spree/' + dir
           dest = './app/views/spree/' + dir
           directory orig, dest, force: true
         end
