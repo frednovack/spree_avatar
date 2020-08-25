@@ -9,14 +9,14 @@ module SpreeAvatar
         inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', "\n *= require spree_avatar/frontend", after: "spree/frontend", verbose: true
       end
 
-#      def copy_views
-#        dirs_to_copy = ['avatars', 'users']
-#        dirs_to_copy.each do |dir|
-#          orig = 'views/spree/' + dir
-#          dest = './app/views/spree/' + dir
-#          directory orig, dest, force: true
-#        end
-#      end
+      def copy_views
+        dirs_to_copy = ['avatars', 'users']
+        dirs_to_copy.each do |dir|
+          orig = 'views/spree/' + dir
+          dest = './app/views/spree/' + dir
+          directory orig, dest, force: true
+        end
+      end
 
     end
   end
